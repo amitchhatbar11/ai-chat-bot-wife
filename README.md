@@ -35,8 +35,8 @@ Clone below Image model for Image generation in your local machine:
 git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui
 ```
 
-Go to civitai.com(https://civitai.com)
-Create your account and download Aniverse(https://civitai.com/models/107842/aniverse) Model for text2img generation.
+Go to [civitai.com](https://civitai.com)
+Create your account and download [Aniverse](https://civitai.com/models/107842/aniverse) Model for text2img generation.
 
 Place downloaded model inside the stable-diffusion-webui project
 Go to folder: models > Stable-diffusion
