@@ -1,70 +1,115 @@
-# Getting Started with Create React App
+# Proof of Concept (POC) Documentation
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
 
-## Available Scripts
+**Project Name**: AI Chatbot Wife  
+**Description**: “This POC demonstrates an AI chatbot application where users can interact with an anime character that responds with text and images, simulating conversation scenarios based on the time of day.”
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+- **Feature 1**: User can choose character of AI chatbot like, woman, cat or dog character of woman.
+- **Feature 2**: AI chatbot will respond with text message and image.
+- **Feature 3**: It works with the history of the conversation while responding back.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Technologies Used
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **Frontend**: React, Bootstrap
+- **Backend**: Node.js
+- **Image Generation**: FastAPI with Stable Diffusion
+- **Other**: axios, openai
 
-### `npm test`
+## Getting Started
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Prerequisites
 
-### `npm run build`
+List any prerequisites and how to install them. For example:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Node.js and npm
+- Python and pip (for FastAPI)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Pre Requisite
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Clone below Image model for Image generation in your local machine:
 
-### `npm run eject`
+```bash
+git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Go to civitai.com(https://civitai.com)
+Create your account and download Aniverse(https://civitai.com/models/107842/aniverse) Model for text2img generation.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Place downloaded model inside the stable-diffusion-webui project
+Go to folder: models > Stable-diffusion
+Put downloaded image model file inside Stable-diffusion.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Don't forget to select this downloaded model to select, check screenshot:
+![alt text](image-1.png)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+**Run it with below**
 
-## Learn More
+```bash
+cd stable-diffusion-webui
+./webui.sh --api
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Installation for AI Chat App
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Provide step-by-step instructions to set up the project locally:
 
-### Code Splitting
+1.  **Clone the Repository**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+    ```bash
+    git clone https://github.com/amitchhatbar11/ai-chat-bot-wife.git
+    ```
 
-### Analyzing the Bundle Size
+2.  **Navigate to the Project Directory**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+    ```bash
+    cd ai-chat-bot-wife
+    ```
 
-### Making a Progressive Web App
+3.  **Install Backend Dependencies**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+    ```bash
+    cd backend
+    npm install
+    ```
 
-### Advanced Configuration
+4.  **Set Up Environment Variables**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+    ```env
+    OPENAI_API_KEY="add-your-open-ai-secret-key"
 
-### Deployment
+    NEGATIVE_PROMPT="nude, nudity, topless, naked, erotic, scary, half body, weird body structure, explicit, adult, , other people, strangers, crowds, angry, sad, stressed, clutter, dark lighting, harsh shadows, artificial lighting, heavy makeup, moles, (grayscale:1.4), extra limbs, extra hands, extra feet, extra fingers, bad anatomy, text, logos, watermarks, out of frame, 3D render, amputated hands, amputated fingers, deformed body, long neck, bad body proportions, mutated hands, mutilated, mutation, (ugly), morbid, disfigured, expose breasts, revealing clothes"
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+    POSITIVE_PROMPT="Wearing decent clothes always. (two hands, two legs, attention to detail about body structure, best quality, masterpiece, colorful, dynamic angle, highest detailed) upper body photo, perfect hands, flirting with POV, wearing decent clothes"
 
-### `npm run build` fails to minify
+    STABLE_DIFFUSION_ENDPOINT="http://127.0.0.1:7860"
+    ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+5.  **Install Frontend Dependencies**
+
+    ```bash
+    cd ../frontend
+    npm install
+    ```
+
+6.  **Run the Backend**
+
+    ```bash
+    cd ../backend
+    npm start
+    ```
+
+7.  **Open new tab & run the Frontend**
+
+    ```bash
+    cd ../frontend
+    npm start
+    ```
+
+![alt text](image.png)
+
+![alt text](image-2.png)
+
+![alt text](image-3.png)
